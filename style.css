@@ -287,52 +287,69 @@ footer {
     display: none;
   } /* Sembunyikan menu di HP untuk kesederhanaan */
 }
+
 /* ==========================================
-   PENGATURAN KHUSUS LAYAR HP (RESPONSIVE)
+   PERBAIKAN RESPONSIVE (HP)
    ========================================== */
 @media (max-width: 768px) {
-    /* Atur jarak samping agar tidak terlalu mepet */
-    section {
-        padding: 80px 5% 40px 5% !important;
+    /* Mencegah halaman bisa digeser ke samping (biar gak goyang) */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
     }
 
-    /* Kecilkan ukuran tulisan nama di Beranda */
+    /* Padding Section disesuaikan */
+    section {
+        padding: 60px 5% !important;
+        min-height: auto !important;
+    }
+
+    /* Ukuran teks Hero diperkecil agar tidak kepotong */
     .hero h1 {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
+        line-height: 1.2;
     }
 
     .hero h2 {
-        font-size: 1.5rem !important;
+        font-size: 1.2rem !important;
     }
 
-    /* Buat foto "Tentang Saya" jadi di tengah dan ukurannya pas */
+    /* Skill dibuat 1 kolom agar persentase tidak tabrakan */
+    .skills-container {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* Proyek juga dibuat 1 kolom */
+    .project-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Tentang Saya: Foto di atas, teks di bawah */
     .about-container {
-        grid-template-columns: 1fr; /* Jadi 1 kolom (atas bawah) */
+        grid-template-columns: 1fr !important;
         text-align: center;
-        gap: 30px;
     }
 
     .about-img img {
-        max-width: 200px; /* Foto diperkecil di HP */
+        width: 180px;
+        margin-bottom: 20px;
     }
 
-    /* Buat Skill jadi 1 kolom saja di HP agar tidak sempit */
-    .skills-container {
-        grid-template-columns: 1fr !important;
+    /* Kontak (Sosmed) dibuat 2 kolom saja biar gak terlalu kecil */
+    .social-container {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* Buat Proyek jadi 1 kolom saja */
-    .project-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* Sembunyikan menu Navbar yang banyak, atau buat jadi simpel */
+    /* Navbar dibuat simpel */
     nav {
         padding: 15px 5%;
+        justify-content: center; /* Logo di tengah di HP */
     }
 
     nav ul {
-        display: none; /* Sementara disembunyikan agar tidak berantakan */
+        display: none; /* Menu navigasi disembunyikan di HP */
     }
 }
 
