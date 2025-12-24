@@ -287,3 +287,52 @@ footer {
     display: none;
   } /* Sembunyikan menu di HP untuk kesederhanaan */
 }
+/* ==========================================
+   PENGATURAN KHUSUS LAYAR HP (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Atur jarak samping agar tidak terlalu mepet */
+    section {
+        padding: 80px 5% 40px 5% !important;
+    }
+
+    /* Kecilkan ukuran tulisan nama di Beranda */
+    .hero h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Buat foto "Tentang Saya" jadi di tengah dan ukurannya pas */
+    .about-container {
+        grid-template-columns: 1fr; /* Jadi 1 kolom (atas bawah) */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-img img {
+        max-width: 200px; /* Foto diperkecil di HP */
+    }
+
+    /* Buat Skill jadi 1 kolom saja di HP agar tidak sempit */
+    .skills-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Buat Proyek jadi 1 kolom saja */
+    .project-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Sembunyikan menu Navbar yang banyak, atau buat jadi simpel */
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        display: none; /* Sementara disembunyikan agar tidak berantakan */
+    }
+}
+
